@@ -8,11 +8,14 @@ class Photo extends React.Component {
             thing: props,
             photos: []
         }
-        this.thing = console.log(props)
     }
     render() {
         return(
         <div>
+            <h1>Gallery</h1>
+            {this.props.data.map((category) =>
+            <PhotoEntry data={category}/>
+             )}
         </div> 
         )
     }
@@ -20,3 +23,4 @@ class Photo extends React.Component {
 
 export default Photo;
 
+ 
