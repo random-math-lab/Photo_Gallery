@@ -11,7 +11,7 @@ class PhotoEntry extends React.Component {
     render() {
         return (
         <div>
-            <img src={this.props.data.url}></img>
+            <img className="entry" src={this.props.data.url} width="300" height="200"></img>
             <h6>${this.props.data.description}</h6>
         </div>
         )

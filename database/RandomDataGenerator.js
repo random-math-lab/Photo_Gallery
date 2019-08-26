@@ -3,9 +3,6 @@ const faker = require('faker');
 
 
 
-var randomImage = () => {
-  return faker.image.image();
-}
 
 var randomDescription = () => {
     return faker.random.words(10);
@@ -29,7 +26,7 @@ var RandomDataGenerator =  () => {
         var data = {};
         data.id = i;
         data.listingId = getRandomInt(10);
-        data.url = randomImage();
+        data.url = `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`;
         data.description = randomDescription();
         dataSet.push(data);
     }
