@@ -10,7 +10,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/server.js",
-    "db": "mysql -u root < schema.sql"
+    "db": "mysql -u root < schema.sql",
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -33,7 +34,10 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^24.9.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   }
