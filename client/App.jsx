@@ -1,12 +1,14 @@
 import React  from 'react';
 import Photo from './src/components/Photo.jsx';
+import DemoCarousel from './src/components/Carousel.jsx'
+import { Carousel } from 'react-responsive-carousel';
 
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             listingid: 1,
-            mainphoto: "1.png",
+            mainphoto: "",
             photolist: this.props.data(),
             listingphotos: []
         }
@@ -29,16 +31,17 @@ class App extends React.Component {
     }
 
     GetData () {
-        fetch('/')
+        fetch('/api/photo/:id')
         .then(response => response.json())
         .then(data => this.setState({}));
     }
 
     componentDidMount() {
-        var listing = this.getListingPhotos();
-        this.setState({
-            photolist: listing
-        })
+        this.GetData()
+        // var listing = this.getListingPhotos();
+        // this.setState({
+        //     photolist: listing
+        // })
     }
 
     render() {
@@ -46,6 +49,7 @@ class App extends React.Component {
             <div>
                 <h1>PHOTO</h1>
                 <Photo data={this.state.photolist}/>
+                <Carousel/>
             </div>
         )
     }
