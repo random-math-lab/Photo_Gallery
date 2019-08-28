@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../App.jsx';
-const RandomDataGenerator = require('../../database/RandomDataGenerator.js')
+const data = require('../../database/seeder.js')
 
-ReactDOM.render(<App data={RandomDataGenerator.RandomDataGenerator}/>, document.getElementById('app'));
+ReactDOM.render(<App data={data}/>, document.getElementById('app'));

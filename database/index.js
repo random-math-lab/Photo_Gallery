@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const randomDataGenerator = require("../database/RandomDataGenerator.js");
+const data = require("./seeder.js");
 
 const db = mysql.createConnection({
     user: 'root',
@@ -8,11 +8,11 @@ const db = mysql.createConnection({
 })
 
 db.connect((err) => {
-    if (err){
+    if (err) {
         console.log(err);
         return;
-    }else{
-        console.log('connected to database')
+    } else {
+        
     }
 })
 
@@ -35,5 +35,4 @@ const randomPhotos = (cb) => {
 
 
 
-module.exports.db = db;
-module.exports.randomPhotos = randomPhotos;
+module.exports = db;

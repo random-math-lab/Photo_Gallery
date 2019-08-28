@@ -7,6 +7,11 @@
   "engines": {
     "node": ">=6.13.0"
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>test/setup.js"
+    ]
+  },
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/server.js",
@@ -14,19 +19,23 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "babel-preset-airbnb": "^4.0.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "fs": "0.0.1-security",
     "jquery": "^3.4.1",
     "lorem-ipsum": "^2.0.3",
     "mysql": "^2.17.1",
     "net": "^1.0.2",
-    "node": "^12.8.1",
+    "node": "^12.9.0",
     "nodemon": "^1.19.1",
+    "path": "^0.12.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-responsive-carousel": "^3.1.50",
+    "styled-components": "^4.3.2",
+    "supertest": "^4.0.2",
     "tls": "0.0.1"
   },
   "devDependencies": {

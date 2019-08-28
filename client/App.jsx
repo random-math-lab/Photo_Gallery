@@ -1,7 +1,5 @@
 import React  from 'react';
 import Photo from './src/components/Photo.jsx';
-import DemoCarousel from './src/components/Carousel.jsx'
-import { Carousel } from 'react-responsive-carousel';
 
 class App extends React.Component {
     constructor(props) {
@@ -9,11 +7,9 @@ class App extends React.Component {
         this.state = {
             listingid: 1,
             mainphoto: "",
-            photolist: this.props.data(),
+            photolist: this.props.data,
             listingphotos: []
         }
-        this.all = console.log('all photos: ',this.state.photolist)
-        this.listing = console.log('listing only: ',this.getListingPhotos())
     }
 
     getListingPhotos () {
@@ -30,26 +26,21 @@ class App extends React.Component {
         return listingphotos;
     }
 
-    GetData () {
-        fetch('/api/photo/:id')
-        .then(response => response.json())
-        .then(data => this.setState({}));
-    }
+    // GetData () {
+    //     fetch('/api/photo/:id')
+    //     .then(response => response.json())
+    //     .then(data => this.setState({}));
+    // }
 
-    componentDidMount() {
-        this.GetData()
-        // var listing = this.getListingPhotos();
-        // this.setState({
-        //     photolist: listing
-        // })
-    }
+    // componentDidMount() {
+    //     this.GetData()
+
+    // }
 
     render() {
         return(
             <div>
-                <h1>PHOTO</h1>
                 <Photo data={this.state.photolist}/>
-                <Carousel/>
             </div>
         )
     }
