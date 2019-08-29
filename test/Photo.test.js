@@ -43,7 +43,7 @@ var data = [
   ]
   
 
-describe('Dummy Component', () => {
+describe('Photo Component', () => {
     const wrapper = shallow(<Photo data={data}/>)
     it('should render a main photo', () => {
         expect(wrapper.exists()).toBe(true);

@@ -43,7 +43,7 @@ var data = [
   ]
   
 
-describe('Dummy Component', () => {
+describe('PhotoEntryGrid Component', () => {
     const wrapper = shallow(<PhotoEntryGrid data={data}/>)
     it('should render a main photo', () => {
         expect(wrapper.exists()).toBe(true);
