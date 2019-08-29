@@ -1,5 +1,7 @@
 import React  from 'react';
 import Photo from './src/components/Photo.jsx';
+import Modal from './src/components/Modal.jsx';
+import { throwStatement } from '@babel/types';
 
 class App extends React.Component {
     constructor(props) {
@@ -37,6 +39,7 @@ class App extends React.Component {
     render() {
         return(
             <div>
+                <Modal data={this.state.listingphotos}/>
                 <Photo data={this.state.listingphotos}/>
             </div>
         )

@@ -9,10 +9,8 @@ class PhotoEntryMain extends React.Component {
     }
     render() {
         return (
-        <div className="columnmain image-box">
-            <figure className={`gallery__item gallery__item--${this.props.num}`}>
-                    <img className="mainphoto" src={this.props.data[0].url} ></img>
-            </figure>
+        <div className="mainphotobox">
+            <img className="mainphoto" src={this.props.data[0].url} ></img>
         </div>
         )
     }
