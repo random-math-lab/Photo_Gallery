@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database');
 const data = require('../database/seeder.js')
+const randomPhotos = require('../database')
 const app = express();
 const PORT = 3002;
 
@@ -20,15 +21,13 @@ app.get('/api/photo/:id', (req, res) => {
         console.log(data);
         res.send(data) 
     });
-
 })
 
-let allData = data;
+var random = db.randomPhotos((data) => {
+    return data
+})
+var all = db.allPhotos((data) => {
+    // console.log(data)
+})
 
-db.query("TRUNCATE TABLE photo")
 
-for (let i = 0; i < allData.length; i++) {
-    let currentData = allData[i];
-    let sql = `INSERT INTO photo (linstingId, url, description) values (?, ?, ?)`
-    db.query(sql, [currentData.listingId, `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`, currentData.description])
-}

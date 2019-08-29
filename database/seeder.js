@@ -9,7 +9,7 @@ var getRandomUrl = (i) => {
     return `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`
 }
 
-function getRandomInt(max) {
+var getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
 };
 
@@ -33,6 +33,41 @@ var seeder =  (dataCount) => {
     return dataSet;
 };
 
-var data = seeder(100)
+var photos = seeder(100)
 
-module.exports = data;
+const randomPhotos = (cb) => {
+    let randomIds = [];
+    for(var i = 0; i < 12; i++ ) {
+        let randomId = Math.ceil(Math.random()*100);
+        while( randomIds.indexOf(randomId) >= 0 ) {
+            randomId = Math.ceil(Math.random()*100);
+        }
+        randomIds.push(randomId);       
+    }
+    let queryString = 'SELECT * FROM photo WHERE id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=?'
+    db.db.query(queryString, randomIds, (err, data) => {
+        if(err) {
+            console.log(err);
+        } else {
+            cb(data)
+        }
+    });
+}
+
+const allPhotos = (cb) => {
+    let allData = photos;
+    db.db.query("TRUNCATE TABLE photo")
+    for (let i = 0; i < allData.length; i++) {
+        let currentData = allData[i];
+        let sql = `INSERT INTO photo (linstingId, url, description) values (?, ?, ?)`
+        db.db.query(sql, [currentData.listingId, `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`, currentData.description], (err, data) => {
+            if(err) {
+                console.log(err);
+            } else {
+                cb(data)
+            }
+        })
+    }
+}
+
+module.exports = {photos, randomPhotos, allPhotos}

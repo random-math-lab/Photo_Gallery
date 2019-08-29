@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const data = require("./seeder.js");
+const seeder = require("./seeder.js");
 
 const db = mysql.createConnection({
     user: 'root',
@@ -16,6 +16,8 @@ db.connect((err) => {
     }
 })
 
+const photos = seeder.photos;
+
 const randomPhotos = (cb) => {
     let randomIds = [];
     for(var i = 0; i < 12; i++ ) {
@@ -25,14 +27,31 @@ const randomPhotos = (cb) => {
         }
         randomIds.push(randomId);       
     }
-    console.log(randomIds)
     let queryString = 'SELECT * FROM photo WHERE id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=? OR id=?'
     db.query(queryString, randomIds, (err, data) => {
-        cb(null, data)
+        if(err) {
+            console.log(err);
+        } else {
+            cb(data)
+        }
     });
 }
 
+const allPhotos = (cb) => {
+    let allData = photos;
+    db.query("TRUNCATE TABLE photo")
+    for (let i = 0; i < allData.length; i++) {
+        let currentData = allData[i];
+        let sql = `INSERT INTO photo (linstingId, url, description) values (?, ?, ?)`
+        db.query(sql, [currentData.listingId, `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`, currentData.description], (err, data) => {
+            if(err) {
+                console.log(err);
+            } else {
+                cb(data)
+            }
+        })
+    }
+}
 
 
-
-module.exports = db;
+module.exports = {db, randomPhotos, allPhotos};

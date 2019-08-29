@@ -7,8 +7,8 @@ class Photo extends React.Component {
         super (props);
         this.state = {
             thing: props,
-            mainPhoto: [this.props.data[0]],
-            gridPhotos: [this.props.data[1],this.props.data[2],this.props.data[3],this.props.data[4]]
+            mainPhoto: [props.data[0]],
+            gridPhotos: [props.data[1], props.data[2], props.data[3], props.data[4]]
         }
     }
 
@@ -16,8 +16,8 @@ class Photo extends React.Component {
         return (
             <div className="row">
                 <div className="gallery">
-                    <PhotoEntryMain data={this.state.mainPhoto}/>
-                    <PhotoEntryGrid data={this.state.gridPhotos}/>
+                    <PhotoEntryMain data={this.state.mainPhoto} listingphotos={this.props.listingphotos}/>
+                    <PhotoEntryGrid data={this.state.gridPhotos} listingphotos={this.props.listingphotos}/>
                 </div>
             </div>
         )
