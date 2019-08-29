@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" time="2.2">
+  <testsuite name="Dummy Component" errors="0" failures="0" skipped="0" timestamp="2019-08-29T00:32:40" time="1.432" tests="1">
+    <testcase classname="Dummy Component should render a main photo" name="Dummy Component should render a main photo" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Database" errors="0" failures="0" skipped="0" timestamp="2019-08-29T00:32:40" time="1.459" tests="3">
+    <testcase classname="Database should generate 100 data points" name="Database should generate 100 data points" time="0.003">
+    </testcase>
+    <testcase classname="Database should have data with properties id, listingId, url, description" name="Database should have data with properties id, listingId, url, description" time="0.001">
+    </testcase>
+    <testcase classname="Dummy Component renders the Dummy element" name="Dummy Component renders the Dummy element" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Dummy Component" errors="0" failures="0" skipped="0" timestamp="2019-08-29T00:32:40" time="1.445" tests="1">
+    <testcase classname="Dummy Component should render a main photo" name="Dummy Component should render a main photo" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Dummy Component" errors="0" failures="0" skipped="0" timestamp="2019-08-29T00:32:40" time="1.464" tests="1">
+    <testcase classname="Dummy Component should render a main photo" name="Dummy Component should render a main photo" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>

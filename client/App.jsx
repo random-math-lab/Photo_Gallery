@@ -5,11 +5,12 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            listingid: 1,
+            listingid: 2,
             mainphoto: "",
-            photolist: this.props.data,
-            listingphotos: []
+            listingphotos: this.props.data
         }
+        this.getListingPhotos = this.getListingPhotos.bind(this)
+        this.getAllPhotos = this.getAllPhotos.bind(this)
     }
 
     getListingPhotos () {
@@ -20,27 +21,23 @@ class App extends React.Component {
                 listingphotos.push(photos[i])
             }
         }
-        this.setState({
-            listingphotos: listingphotos
-        })
-        return listingphotos;
+        return listingphotos
     }
 
-    // GetData () {
-    //     fetch('/api/photo/:id')
-    //     .then(response => response.json())
-    //     .then(data => this.setState({}));
-    // }
+    getAllPhotos () {
+        fetch('/api/photo/:id')
+        .then(response => response)
+        .then(data => this.setState({photolist: data}));
+    }
 
-    // componentDidMount() {
-    //     this.GetData()
-
-    // }
+    componentDidMount() {
+        
+    }
 
     render() {
         return(
             <div>
-                <Photo data={this.state.photolist}/>
+                <Photo data={this.state.listingphotos}/>
             </div>
         )
     }
