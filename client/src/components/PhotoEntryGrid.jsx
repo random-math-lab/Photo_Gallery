@@ -2,11 +2,11 @@ import React  from 'react';
 
 var PhotoEntryGrid = (props) => {
         return (
-        <div className="columngrid">
-            <img className="grid image-box" src={props.data[0].url}></img>
-            <img className="grid image-box" src={props.data[1].url}></img>
-            <img className="grid image-box" src={props.data[2].url}></img>
-            <img className="grid image-box" src={props.data[3].url}></img>
+        <div className="gridphotobox">
+            <img className="gridphoto" src={props.data[0].url}></img>
+            <img className="gridphoto" src={props.data[1].url}></img>
+            <img className="gridphoto" src={props.data[2].url}></img>
+            <img className="gridphoto" src={props.data[3].url}></img>
         </div>
         )
 }
