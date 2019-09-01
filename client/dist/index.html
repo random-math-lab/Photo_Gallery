@@ -10,70 +10,71 @@
         margin: 0;
         -webkit-font-smoothing: antialiased;
       }
-      .gallery{
-        width: 100%;
-        height: 445.328px;
+
+      .searchbar {
+        width:100%;
+        height:80px;
+        background-image: url('./searchbar.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50%;
       }
 
-      .mainphotobox {
-        float: left;
-        width: 50%;
-        height: 100%;
-        padding: 0px;
-        
+      .gallery {
+        width: 100%;
+        height: 445.5px;
       }
 
-      .mainphoto {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-      }
 
       .gridphotobox {
-        float: left;
+        display: inline-flex;
+        float: right;
         width: 50%;
         height: 100%;
+      }
+      
+      .gridcolumn1 {
+        width: 50%;
+      }
+      .gridcolumn2 {
+        width: 50%;
+      }
+
+      .grid{
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
       }
 
       .gridphoto {
-        width: 50%;
-        height: 50%;
-        padding: 0px;
-      }
-
-      /* img {
-        transition: transform 2s ease 0s;
-      }
-
-      img:hover {
-        transform: scale(1.1);
-        filter: brightness(150%);
-        filter:contrast(150%); 
-        filter: brightness(125%)
-      }  */
-
-      .modal {
-        /* makes modal hidden */
-        display: show;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        height: 100%;
+        display:block;
+        border-color: grey;
+        border-style: solid;
+        border-width: thin;
         width: 100%;
-        /* scroll bar if needed */
-        overflow: auto;
-        background-color: rgba(255,255,255, 1);
-
-      }
-
-      .modal-content {
-        display: inline-flex;
-        background-color: rgba(255,255,255, 1);
         height: 100%;
-        width: 100%;
-        margin-top: 100px;
+        overflow: hidden;
+        cursor: pointer;
       }
+
+      .collage {
+        transition: transform 0.35s ease 0s;
+      }
+
+      .collage:hover {
+        transform: scale(1.05);
+        transform-origin: 50% 50%;
+        cursor: pointer;
+      } 
+
+      .closeBtn {
+        height: 70px;
+        width: 70px;
+        font-size: 65px;
+        font-weight: 100;
+        cursor: pointer;
+      }
+
 
       .modalMain {
         float: left;
@@ -82,6 +83,7 @@
         display: inline-flex;
         justify-content: center;
         align-content: center;
+        margin-left: 55px;
       }
 
       .modalMainPhoto {
@@ -90,6 +92,7 @@
         width: 788.8px;
         height: 525.86px;
         border-radius: 16px;
+        cursor: pointer;
       }
 
       .btncontainer {
@@ -111,6 +114,8 @@
         background-size: 60%;
         background-repeat: no-repeat;
         background-position: 50%;
+        border-color:transparent;
+        cursor: pointer;
       }
 
       .rightbtn {
@@ -121,42 +126,139 @@
         background-size: 60%;
         background-repeat: no-repeat;
         background-position: 50%;
+        border-color:transparent;
+        cursor: pointer;
       }
       .modalCarousel {
         float: right;
-        width: 27%;
+        width: 28%;
         height: 525.86px;
         display: inline-flex;
         justify-content: center;
         align-content: center;
-        
+        padding:20px;
+        margin:20px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
       }
+
+      .modalCarousel:after {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        display: inline-flex;
+        left: 25px; right: 25px;
+        top: 0; bottom: 0;
+        background-image:
+          linear-gradient(to right,white, rgba(0,128,128,0) 100px),
+          linear-gradient(to left , white, rgba(0,128,128,0) 100px);
+      }
+
       .modalCarouselPhoto{
-        margin: 8px;
+        position: relative;
+        overflow: hidden;
+        margin: 5px;
         width: 64px;
         height: 64px;
         border-radius: 4px;
-        position: relative;
-        top: 100px;
-      }
-      .center {
-        border-color: black;
-        border-style: solid;
+        top: 30px;
+        cursor: pointer;
       }
 
+      .center {
+        border-color: grey;
+        border-style: solid;
+        width: 64px;
+        height: 64px;
+        cursor: pointer;
+      }
+
+      .sharesave {
+        display: inline-flex;     
+        margin: 20px;
+      }
+
+      .btnContainer {
+        position: absolute;
+        right: 0px;;
+        top: 85px;
+      }
+
+      .savebtn {
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 4px;
+        background: var(--color-buttons-inverse-color, #ffffff);
+        border-color: var(--color-buttons-inverse-border, transparent);
+        color: var(--color-buttons-inverse-text, #484848);
+        font-size: var(--font-button-small-font-size, 14px);
+        width: 96.22px;
+        height: 36px;
+        margin-left: 10px; 
+        background-image: url('./save.png');
+        background-size: 20%;
+        background-repeat: no-repeat;
+        text-align:right;
+        background-position: 18%;
+        cursor: pointer;
+      }
       
+      .sharebtn  {
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 4px;
+        background: var(--color-buttons-inverse-color, #ffffff);
+        border-color: var(--color-buttons-inverse-border, transparent);
+        color: var(--color-buttons-inverse-text, #484848);
+        font-size: var(--font-button-small-font-size, 14px);
+        width: 96.22px;
+        height: 36px;
+        margin-right: 10px; 
+        background-image: url('./share.png');
+        background-size: 20%;
+        background-repeat: no-repeat;
+        text-align: right;
+        background-position: 13%;
+        cursor: pointer;
+      }
+
+      .viewbtn {
+        float: right;
+        font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 4px;
+        background: var(--color-buttons-inverse-color, #ffffff);
+        border-color: var(--color-buttons-inverse-border, transparent);
+        color: var(--color-buttons-inverse-text, #484848);
+        font-size: var(--font-button-small-font-size, 14px);
+        border-radius: 4px;
+        width: 113.78px;
+        height: 36px;
+        margin-top: 310px;
+        margin-right: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
       
 
     </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Hello, world!</title>
+  <title>cavebnb</title>
 </head>
 <body>
   <div id="app">
   </div>
-  
-
   <script type="text/javascript" src="bundle.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -1,19 +1,18 @@
 import React  from 'react';
+import * as sc from '../styles/PhotoEntryMainStyles';
 
-class PhotoEntryMain extends React.Component {
-    constructor(props) {
-        super (props);
-        this.state = {
-            photos: []
-        }
-    }
-    render() {
+var PhotoEntryMain = (props) => {
+
         return (
-        <div className="mainphotobox">
-            <img className="mainphoto" src={this.props.data[0].url} ></img>
-        </div>
+            <sc.MainPhotoContainer>
+                <sc.MainPhoto>
+                    <sc.Collage>
+                    <img src={props.data[0].url}></img>
+                    </sc.Collage>
+                </sc.MainPhoto>
+            </sc.MainPhotoContainer>
         )
-    }
+    
 }
 
 export default PhotoEntryMain;

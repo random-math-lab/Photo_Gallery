@@ -1,6 +1,9 @@
 import React  from 'react';
-import ModalContent from './ModalContent.jsx';
 import styled from 'styled-components';
+import ModalEntryMain from './ModalEntryMain.jsx'
+import ModalEntryCarousel from './ModalEntryCarousel.jsx'
+import * as sc from '../styles/ModalStyles';
+
 
 class Modal extends React.Component {
     constructor(props) {
@@ -43,10 +46,15 @@ class Modal extends React.Component {
     render() {
         return (
             <div>
-                <button id="modalBtn" className="button" data-toggle="modal" >Modal Button</button>
-                <div id="simplemodal" className="modal">
-                    <ModalContent main={this.state.main} carousel={this.state.carousel} onClick={this.onClick}/>   
-                </div>
+                <sc.Modal>
+                    <sc.ModalContent>
+                        <ModalEntryMain main={this.state.main} onClick={this.onClick}/>
+                        <ModalEntryCarousel main={this.state.main} carousel={this.state.carousel}/>
+                        <sc.CloseBtnContainer>
+                            <span className="closeBtn" data-dismiss="modal">&times;</span>  
+                        </sc.CloseBtnContainer>
+                    </sc.ModalContent>   
+                </sc.Modal>
             </div>
         )
     }

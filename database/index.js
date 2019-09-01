@@ -1,5 +1,5 @@
-const mysql = require("mysql");
-const seeder = require("./seeder.js");
+const mysql = require('mysql');
+const seeder = require('./seeder.js') 
 
 const db = mysql.createConnection({
     user: 'root',
@@ -16,9 +16,7 @@ db.connect((err) => {
     }
 })
 
-const photos = seeder.photos;
-
-const randomPhotos = (cb) => {
+const listingPhotos = (cb) => {
     let randomIds = [];
     for(var i = 0; i < 12; i++ ) {
         let randomId = Math.ceil(Math.random()*100);
@@ -32,26 +30,18 @@ const randomPhotos = (cb) => {
         if(err) {
             console.log(err);
         } else {
-            cb(data)
+            cb(null, data)
         }
     });
 }
+var photos = seeder.seeder(100);
 
-const allPhotos = (cb) => {
-    let allData = photos;
-    db.query("TRUNCATE TABLE photo")
-    for (let i = 0; i < allData.length; i++) {
-        let currentData = allData[i];
-        let sql = `INSERT INTO photo (linstingId, url, description) values (?, ?, ?)`
-        db.query(sql, [currentData.listingId, `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`, currentData.description], (err, data) => {
-            if(err) {
-                console.log(err);
-            } else {
-                cb(data)
-            }
-        })
-    }
+db.query("TRUNCATE TABLE photo")
+for (let i = 0; i < photos.length; i++) {
+    let currentData = photos[i];
+    let sql = `INSERT INTO photo (linstingId, url, description) values (?, ?, ?)`
+    db.query(sql, [currentData.listingId, `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`, currentData.description])
 }
 
-
-module.exports = {db, randomPhotos, allPhotos};
+module.exports.db = db;
+module.exports.listingPhotos = listingPhotos;

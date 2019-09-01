@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="5" failures="0" time="2.393">
-  <testsuite name="Database" errors="0" failures="0" skipped="0" timestamp="2019-08-29T22:02:58" time="1.542" tests="2">
+<testsuites name="jest tests" tests="5" failures="0" time="2.343">
+  <testsuite name="Photo Component" errors="0" failures="0" skipped="0" timestamp="2019-08-30T19:14:58" time="1.476" tests="1">
+    <testcase classname="Photo Component should render a main photo" name="Photo Component should render a main photo" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="PhotoEntryGrid Component" errors="0" failures="0" skipped="0" timestamp="2019-08-30T19:14:58" time="1.488" tests="1">
+    <testcase classname="PhotoEntryGrid Component should render a main photo" name="PhotoEntryGrid Component should render a main photo" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Database" errors="0" failures="0" skipped="0" timestamp="2019-08-30T19:14:58" time="1.505" tests="2">
     <testcase classname="Database should generate 100 data points" name="Database should generate 100 data points" time="0.003">
     </testcase>
     <testcase classname="Database should have data with properties id, listingId, url, description" name="Database should have data with properties id, listingId, url, description" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="PhotoEntryGrid Component" errors="0" failures="0" skipped="0" timestamp="2019-08-29T22:02:58" time="1.538" tests="1">
-    <testcase classname="PhotoEntryGrid Component should render a main photo" name="PhotoEntryGrid Component should render a main photo" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="Photo Component" errors="0" failures="0" skipped="0" timestamp="2019-08-29T22:02:58" time="1.543" tests="1">
-    <testcase classname="Photo Component should render a main photo" name="Photo Component should render a main photo" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="PhotoEntryMain Component" errors="0" failures="0" skipped="0" timestamp="2019-08-29T22:02:58" time="1.534" tests="1">
+  <testsuite name="PhotoEntryMain Component" errors="0" failures="0" skipped="0" timestamp="2019-08-30T19:14:58" time="1.53" tests="1">
     <testcase classname="PhotoEntryMain Component should render a main photo" name="PhotoEntryMain Component should render a main photo" time="0.003">
     </testcase>
   </testsuite>
