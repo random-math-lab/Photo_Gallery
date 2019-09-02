@@ -1,6 +1,7 @@
 import React  from 'react';
 import PhotoEntryMain from './PhotoEntryMain.jsx'
 import PhotoEntryGrid from './PhotoEntryGrid.jsx'
+import * as sc from '../styles/PhotoStyles';
 
 class Photo extends React.Component {
     constructor(props) {
@@ -13,12 +14,10 @@ class Photo extends React.Component {
 
     render() {
         return (
-            <div className="row">
-                <div className="gallery">
+            <sc.Row>
                     <PhotoEntryMain data={this.state.mainPhoto}/>
                     <PhotoEntryGrid data={this.state.subPhotos}/>
-                </div>
-            </div>
+            </sc.Row>
         )
     }
 }

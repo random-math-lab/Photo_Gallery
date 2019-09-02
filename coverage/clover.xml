@@ -1,73 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1567116180414" clover="3.2.0">
-  <project timestamp="1567116180414" name="All files">
-    <metrics statements="50" coveredstatements="30" conditionals="4" coveredconditionals="0" methods="13" coveredmethods="9" elements="67" coveredelements="39" complexity="0" loc="50" ncloc="50" packages="2" files="4" classes="4"/>
+<coverage generated="1567461860084" clover="3.2.0">
+  <project timestamp="1567461860084" name="All files">
+    <metrics statements="93" coveredstatements="61" conditionals="14" coveredconditionals="2" methods="28" coveredmethods="13" elements="135" coveredelements="76" complexity="0" loc="93" ncloc="93" packages="3" files="16" classes="16"/>
     <package name="client.src.components">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-      <file name="Photo.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/Photo.jsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+      <metrics statements="57" coveredstatements="26" conditionals="14" coveredconditionals="2" methods="23" coveredmethods="9"/>
+      <file name="App.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/App.jsx">
+        <metrics statements="18" coveredstatements="13" conditionals="10" coveredconditionals="2" methods="8" coveredmethods="5"/>
         <line num="15" count="1" type="stmt"/>
-      </file>
-      <file name="PhotoEntryGrid.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/PhotoEntryGrid.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-      </file>
-      <file name="PhotoEntryMain.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/PhotoEntryMain.jsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="database">
-      <metrics statements="42" coveredstatements="22" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="4"/>
-      <file name="seeder.js" path="/Users/syoh/Desktop/Photos/Photo_Gallery/database/seeder.js">
-        <metrics statements="42" coveredstatements="22" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="4"/>
-        <line num="2" count="4" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="5" count="400" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
-        <line num="9" count="400" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="400" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="17" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="400" type="stmt"/>
-        <line num="27" count="400" type="stmt"/>
-        <line num="28" count="400" type="stmt"/>
-        <line num="29" count="400" type="stmt"/>
-        <line num="30" count="400" type="stmt"/>
-        <line num="31" count="400" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="38" count="4" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="50" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+      </file>
+      <file name="Dummy.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/Dummy.jsx">
+        <metrics statements="4" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+      <file name="Modal.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/Modal.jsx">
+        <metrics statements="16" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="73" count="4" type="stmt"/>
+      </file>
+      <file name="ModalEntryCarousel.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/ModalEntryCarousel.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ModalEntryMain.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/ModalEntryMain.jsx">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="Photo.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/Photo.jsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+      <file name="PhotoEntryGrid.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/PhotoEntryGrid.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="PhotoEntryMain.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/PhotoEntryMain.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="SaveButton.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/SaveButton.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ShareButton.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/ShareButton.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ViewPhotoButton.jsx" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/components/ViewPhotoButton.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="client.src.styles">
+      <metrics statements="17" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="ModalStyles.js" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/styles/ModalStyles.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+      </file>
+      <file name="PhotoEntryMainStyles.js" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/styles/PhotoEntryMainStyles.js">
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+      </file>
+      <file name="PhotoStyles.js" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/styles/PhotoStyles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+      </file>
+      <file name="ViewPhotoButtonStyles.js" path="/Users/syoh/Desktop/Photos/Photo_Gallery/client/src/styles/ViewPhotoButtonStyles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="database">
+      <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="seeder.js" path="/Users/syoh/Desktop/Photos/Photo_Gallery/database/seeder.js">
+        <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="100" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="100" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="100" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="100" type="stmt"/>
+        <line num="28" count="100" type="stmt"/>
+        <line num="29" count="100" type="stmt"/>
+        <line num="30" count="100" type="stmt"/>
+        <line num="31" count="100" type="stmt"/>
+        <line num="32" count="100" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
       </file>
     </package>
   </project>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../App.jsx';
-const data = require('../../database/seeder.js')
+import App from '../src/components/App.jsx';
+const db = require('../../database/seeder.js')
 
 
-ReactDOM.render(<App data={data.photos}/>, document.getElementById('app'));
+ReactDOM.render(<App data={db.seeder(100)}/>, document.getElementById('app'));

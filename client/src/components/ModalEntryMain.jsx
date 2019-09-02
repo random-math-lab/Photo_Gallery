@@ -1,15 +1,17 @@
 import React  from 'react';
-import ModalButtonLeft from './ModalButtonLeft.jsx'
-import ModalButtonRight from './ModalButtonRight.jsx'
 
 
 var ModalEntryMain = (props) => {
 
         return (
         <div className="modalMain">
-            <ModalButtonLeft onClick={props.onClick}/>
+            <div className="left Container">
+                <button onClick={ () => props.onClick('left') } className="leftbtn"></button>
+            </div>
             <img className="modalMainPhoto" src={props.main[0].url} ></img>
-            <ModalButtonRight onClick={props.onClick}/>
+            <div className="right Container">
+                <button onClick={ () => props.onClick('right') } className="rightbtn"></button>
+            </div>
         </div>
         )
 }

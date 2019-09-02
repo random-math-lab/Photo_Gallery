@@ -1,18 +1,21 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-const db = require('../database/seeder.js')
+const seeder = require('../database/seeder.js')
 
 describe('Database', () => {
+    var data = seeder.seeder(100)
+    var dataEntry = data[0]
+
     test('should generate 100 data points', () => {
-        expect(db.photos.length).toBe(100);
+        expect(data.length).toBe(100);
     
     });
     
     test('should have data with properties id, listingId, url, description', () => {
-        expect(db.photos[0]).toHaveProperty('id');
-        expect(db.photos[0]).toHaveProperty('listingId');
-        expect(db.photos[0]).toHaveProperty('url');
-        expect(db.photos[0]).toHaveProperty('description');
+        expect(dataEntry).toHaveProperty('id');
+        expect(dataEntry).toHaveProperty('listingId');
+        expect(dataEntry).toHaveProperty('url');
+        expect(dataEntry).toHaveProperty('description');
     });    
 });
   

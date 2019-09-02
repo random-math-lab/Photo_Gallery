@@ -48,4 +48,8 @@ describe('Photo Component', () => {
     it('should render a main photo', () => {
         expect(wrapper.exists()).toBe(true);
     });
+
+    it('should render 3 places', () => {
+      expect(wrapper.children().length).toBe(2);
+    });
 });
