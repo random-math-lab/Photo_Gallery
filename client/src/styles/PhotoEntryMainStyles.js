@@ -9,17 +9,19 @@ overflow: hidden;
 `;
 MainPhotoContainer.displayName = 'MainPhotoContainer';
 
-export const MainPhoto = styled.div`
-display: inline-block;
+export const MainPhoto = styled.button`
+justify-content: center;
+align-content: center;
+background-image: url(${props => props.image});
+background-size: cover;
+background-repeat:no-repeat;
+position: relative;
 border-color: black;
 border-width: thin;
 border-style: solid;
 width: 100%;
 height: 100%;
 cursor: pointer;
-background-repeat:no-repeat;
-background-size: auto;
-background: url(${props => props.background});
 `;
 MainPhoto.displayName = 'MainPhoto';
 

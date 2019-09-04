@@ -1,76 +1,69 @@
-import React  from 'react';
+import React from 'react';
+import axios from 'axios';
 import Photo from './Photo.jsx';
 import Modal from './Modal.jsx';
-import axios from 'axios';
 import ShareButton from './ShareButton.jsx';
+import styled from 'styled-components';
 import SaveButton from './SaveButton.jsx';
 import ViewPhotoButton from './ViewPhotoButton.jsx';
-
-import Dummy from './Dummy.jsx';
-
-
+import * as sc from '../styles/AppStyle';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            listingid: 3,
-            mainphoto: "",
-            listingphotos: this.props.data,
-            photos: [  ]
-        }
-        this.getListingPhotos = this.getListingPhotos.bind(this)
-        this.getData = this.getData.bind(this)
+  constructor(props) {
+    super(props);
+    this.state = {
+      listingid: 3,
+      mainphoto: '',
+      photos: [],
+      modal: 'none',
+    };
+    this.getData = this.getData.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  toggleModal() {
+    let status = this.state.modal;
+    if (status === 'none') {
+      status = 'block';
+    } else if (status === 'block') {
+      status = 'none';
     }
+    this.setState({ modal: status });
+  }
 
+  getData() {
+    axios('/api/photo/:id')
+      .then((res) => res.data)
+      .then((photos) => this.setState({ photos }))
+      .catch((err) => console.log('error'));
+  }
 
-    getListingPhotos (photos) {
-        var listingphotos = [];
-        for (var i = 0; i < photos.length; i++) {
-            if (photos[i].listingId === this.state.listingid) {
-                listingphotos.push(photos[i])
-            }
-        }
-        return listingphotos
-    }
+  componentDidMount() {
+    this.getData();
+  }
 
-    getData() {
-        axios('/api/photo/:id')
-        .then( (res) => res.data )
-        .then( (photos) => this.setState({photos: photos}))
-        .catch(err => console.log("error"))
-    }
-
-    componentDidMount() {
-        this.getData()
-        this.setState({listingphotos: this.getListingPhotos(this.props.data)})
-    }
-
-    render() { 
+  render() { 
         if (this.state.photos.length > 0) {
             return(
-                <div className="gallery">
-                    <div className="searchbar"></div>
-                    <Dummy data={this.state.photos[0]}/>
-                    {this.state && this.state.photos && <Modal data={this.state.photos}/>}
-                    {this.state && this.state.photos && <Photo data={this.state.photos}/>}
-                    <div className="btnContainer">
-                        <div className="sharesave">
+                <sc.Gallery>
+                    <sc.Searchbar></sc.Searchbar>
+                    <Modal data={this.state.photos} hidden={this.state.modal} toggleModal={this.toggleModal}/>
+                    <div onClick={this.toggleModal} className="gallery"></div>
+                    <Photo data={this.state.photos} toggleModal={this.toggleModal}/>
+                    <sc.BtnContainer>
+                        <sc.ShareSave>
                             <ShareButton/>
                             <SaveButton/>
-                        </div>
-                        <ViewPhotoButton/>
-                    </div>
-                </div>
+                        </sc.ShareSave>
+                        <ViewPhotoButton toggleModal={this.toggleModal}/>
+                    </sc.BtnContainer>
+                </sc.Gallery>
             )
         } else {
             return null;
-        }
+        } 
     }
 }
 
 
-
-export default App
-
-
+export default App;

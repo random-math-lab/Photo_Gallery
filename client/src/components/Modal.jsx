@@ -3,55 +3,64 @@ import styled from 'styled-components';
 import ModalEntryMain from './ModalEntryMain.jsx'
 import ModalEntryCarousel from './ModalEntryCarousel.jsx'
 import * as sc from '../styles/ModalStyles';
+import ModalDescription from './ModalDescription.jsx';
 
 
 class Modal extends React.Component {
     constructor(props) {
         super (props);
         this.state = {
-            hidden: true,
             main: [props.data[0]],
-            carousel: [props.data[0], props.data[1], props.data[2], props.data[3], props.data[4]],
-            currentIndex: 0,
-            listingPhotos: []
+            carousel: props.data,
+            count: 1,
         }
         this.onClick = this.onClick.bind(this)
     }
 
+    
     onClick (direction) {
         var main = this.state.main;
         var carousel = this.state.carousel;
-        var currentIndex = this.state.currentIndex;
         var length = carousel.length;
-        var newIndex;
-        var newMain;
-
+        var count = this.state.count;
         if(direction === "left") {
             carousel.splice(0,1)
             carousel.push(main[0])
+            if(count === 1) {
+                count = length
+            } else {
+                count--
+            }
             this.setState({
                 main: [carousel[0]],
-                carousel: carousel
+                carousel: carousel,
+                count: count
             })
         } else {
             var photo = carousel[length-1]
             carousel.splice(length-1 ,1)
             carousel.splice(0,0, photo)
+            if(count === length) {
+                count = 1
+            } else {
+                count++
+            }
             this.setState({
                 main: [carousel[0]],
-                carousel: carousel
+                carousel: carousel,
+                count: count
             })
         }
     }
     render() {
         return (
             <div>
-                <sc.Modal>
+                <sc.Modal hidden={this.props.hidden}>
                     <sc.ModalContent>
-                        <ModalEntryMain main={this.state.main} onClick={this.onClick}/>
-                        <ModalEntryCarousel main={this.state.main} carousel={this.state.carousel}/>
+                        <ModalEntryMain main={this.state.main} onClick={this.onClick} />
+                        <ModalEntryCarousel main={this.state.main} carousel={this.state.carousel} count={this.state.count}/>
                         <sc.CloseBtnContainer>
-                            <span className="closeBtn" data-dismiss="modal">&times;</span>  
+                            <span className="closeBtn" onClick={this.props.toggleModal} data-dismiss="modal">&times;</span>  
                         </sc.CloseBtnContainer>
                     </sc.ModalContent>   
                 </sc.Modal>

@@ -1,20 +1,16 @@
 import React  from 'react';
+import * as sc from '../styles/ModalEntryMainStyles';
 
 
 var ModalEntryMain = (props) => {
-
         return (
-        <div className="modalMain">
-            <div className="left Container">
-                <button onClick={ () => props.onClick('left') } className="leftbtn"></button>
-            </div>
-            <img className="modalMainPhoto" src={props.main[0].url} ></img>
-            <div className="right Container">
-                <button onClick={ () => props.onClick('right') } className="rightbtn"></button>
-            </div>
-        </div>
+        <sc.ModalMain>
+            <sc.Leftbtn onClick={ () => props.onClick('left') }></sc.Leftbtn>
+            <sc.ModalMainPhoto image={props.main[0].url}/>
+            <sc.Rightbtn onClick={ () => props.onClick('right') }></sc.Rightbtn>
+        </sc.ModalMain>
         )
-}
+};
 
 export default ModalEntryMain;
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Sharebtn = styled.button`
+export const Savebtn = styled.button`
 font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 padding-top: 6px;
 padding-bottom: 6px;
@@ -22,4 +22,4 @@ background-position: 18%;
 cursor: pointer;
 font-weight: 500;
 `;
-Sharebtn.displayName = 'Sharebtn';
+Savebtn.displayName = 'Savebtn';

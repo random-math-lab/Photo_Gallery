@@ -1,27 +1,35 @@
-import React  from 'react';
+import React from 'react';
+import * as sc from '../styles/PhotoEntryGridStyles';
 
 var PhotoEntryGrid = (props) => {
-        return (
-        <div className="gridphotobox">
-            <div className="gridcolumn1">
-                <div className="grid">
-                <img className="gridphoto collage" src={props.data[0].url}></img>
-                </div>
-                <div className="grid">
-                <img className="gridphoto collage" src={props.data[1].url}></img>\
-                </div>
-            </div>
-            <div className="gridcolumn2">
-                <div className="grid">
-                <img className="gridphoto collage" src={props.data[2].url}></img>
-                </div>
-                <div className="grid">
-                <img className="gridphoto collage" src={props.data[3].url}></img>
-                </div>
-            </div>
-
-        </div>
-        )
+    return(
+        <sc.Gridphotobox>
+            <sc.Gridcolumn1>
+                <sc.Grid>
+                    <sc.Gridphoto onClick={() => {
+                    props.toggleModal()
+                }} image={props.data[0].url}/>
+                </sc.Grid>
+                <sc.Grid>
+                    <sc.Gridphoto onClick={() => {
+                    props.toggleModal()
+                }} image={props.data[1].url}/>
+                </sc.Grid>
+            </sc.Gridcolumn1>
+            <sc.Gridcolumn2>
+                <sc.Grid>
+                    <sc.Gridphoto onClick={() => {
+                    props.toggleModal()
+                }} image={props.data[2].url}/>   
+                </sc.Grid>
+                <sc.Grid>
+                    <sc.Gridphoto onClick={() => {
+                    props.toggleModal()
+                }} image={props.data[3].url}/>
+                </sc.Grid>
+            </sc.Gridcolumn2>
+        </sc.Gridphotobox>
+    );
 }
 
 export default PhotoEntryGrid;

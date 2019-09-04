@@ -1,16 +1,20 @@
 import React  from 'react';
-import styled from 'styled-components';
+import ModalDescription from './ModalDescription.jsx';
+import * as sc from '../styles/ModalEntryCarouselStyles';
 
 var ModalEntryCarousel = (props) => {
     return (
-        <div className="modalCarousel">
-            <img className="modalCarouselPhoto" src={props.carousel[2].url} ></img>
-            <img className="modalCarouselPhoto" src={props.carousel[1].url} ></img>
-            <img className="modalCarouselPhoto center" src={props.carousel[0].url} ></img>
-            <img className="modalCarouselPhoto" src={props.carousel[props.carousel.length-1].url} ></img>
-            <img className="modalCarouselPhoto" src={props.carousel[props.carousel.length-2].url} ></img>
-        </div>
-    )
-}
+        <sc.CarouselContainer>
+            <sc.ModalCarousel>
+                <sc.ModalCarouselPhoto image={props.carousel[2].url}/>
+                <sc.ModalCarouselPhoto image={props.carousel[1].url}/>
+                <sc.ModalCarouselPhotoCenter image={props.carousel[0].url}/>
+                <sc.ModalCarouselPhoto image={props.carousel[props.carousel.length-1].url}/>
+                <sc.ModalCarouselPhoto image={props.carousel[props.carousel.length-2].url}/>
+            </sc.ModalCarousel>
+                <ModalDescription description={props.carousel[0].description} count={props.count} length={props.carousel.length}/>
+        </sc.CarouselContainer>
+    );
+};
 
 export default ModalEntryCarousel;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Modal = styled.div`
-display: none;
+display: ${props => props.hidden};
 position: fixed;
 z-index: 1;
 left: 0;
@@ -31,6 +31,3 @@ width: 70px;
 align-content: center;
 `;
 CloseBtnContainer.displayName = 'CloseBtnContainer';
-
-
-

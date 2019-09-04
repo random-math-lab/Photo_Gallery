@@ -15,8 +15,8 @@ class Photo extends React.Component {
     render() {
         return (
             <sc.Row>
-                    <PhotoEntryMain data={this.state.mainPhoto}/>
-                    <PhotoEntryGrid data={this.state.subPhotos}/>
+                    <PhotoEntryMain toggleModal={this.props.toggleModal} data={this.state.mainPhoto}/>
+                    <PhotoEntryGrid toggleModal={this.props.toggleModal} data={this.state.subPhotos}/>
             </sc.Row>
         )
     }
