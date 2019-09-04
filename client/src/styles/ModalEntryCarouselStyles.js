@@ -32,7 +32,7 @@ background-image:
 `;
 ModalCarouselAfter.displayName = 'ModalCarouselAfter';
 
-export const ModalCarouselPhoto = styled.div`
+export const ModalCarouselPhoto = styled.button`
 justify-content: center;
 align-content: center;
 background-image: url(${props => props.image});
