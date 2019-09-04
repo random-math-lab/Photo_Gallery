@@ -9,7 +9,7 @@ Gallery.displayName = 'Gallery';
 export const Searchbar = styled.div`
 width:100%;
 height:80px;
-background-image: url('./searchbar.png');
+background-image: url('https://fu11m3tal.s3-us-west-1.amazonaws.com/searchbar.png');
 background-size: 100%;
 background-repeat: no-repeat;
 background-position: 50%;
@@ -18,7 +18,7 @@ Searchbar.displayName = 'Searchbar';
 
 export const BtnContainer = styled.div`
 float:right;
-width: 65%;
+width: 65px;
 height: 525.86px;
 `;
 BtnContainer.displayName = 'BtnContainer';

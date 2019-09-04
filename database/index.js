@@ -39,7 +39,7 @@ var photos = seeder.seeder(100);
 db.query("TRUNCATE TABLE photo")
 for (let i = 0; i < photos.length; i++) {
     let currentData = photos[i];
-    let sql = `INSERT INTO photo (linstingId, url, description) values (?, ?, ?)`
+    let sql = `INSERT INTO photo (listingId, url, description) values (?, ?, ?)`
     db.query(sql, [currentData.listingId, `https://fu11m3tal.s3-us-west-1.amazonaws.com/${i+1}.jpg`, currentData.description])
 }
 

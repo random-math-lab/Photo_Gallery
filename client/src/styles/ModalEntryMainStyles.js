@@ -30,7 +30,7 @@ export const Leftbtn = styled.button`
 float: left;
 width: 73.6px;
 height: 100%;
-background-image: url('./LEFT.png');
+background-image: url('https://fu11m3tal.s3-us-west-1.amazonaws.com/LEFT.png');
 background-size: 60%;
 background-repeat: no-repeat;
 background-position: 50%;
@@ -44,7 +44,7 @@ export const Rightbtn = styled.button`
 float: right;
 width: 73.6px;
 height: 100%;
-background-image: url('./RIGHT.png');
+background-image: url('https://fu11m3tal.s3-us-west-1.amazonaws.com/RIGHT.png');
 background-size: 60%;
 background-repeat: no-repeat;
 background-position: 50%;

@@ -17,7 +17,6 @@ class Modal extends React.Component {
         this.onClick = this.onClick.bind(this)
     }
 
-    
     onClick (direction) {
         var main = this.state.main;
         var carousel = this.state.carousel;

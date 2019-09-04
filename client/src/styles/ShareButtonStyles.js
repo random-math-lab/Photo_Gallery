@@ -14,7 +14,7 @@ font-size: var(--font-button-small-font-size, 14px);
 width: 96.22px;
 height: 36px;
 margin-left: 10px; 
-background-image: url('./share.png');
+background-image: url('https://fu11m3tal.s3-us-west-1.amazonaws.com/share.png');
 background-size: 20%;
 background-repeat: no-repeat;
 text-align:right;

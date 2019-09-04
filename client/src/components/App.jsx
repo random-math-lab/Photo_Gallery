@@ -8,7 +8,7 @@ import SaveButton from './SaveButton.jsx';
 import ViewPhotoButton from './ViewPhotoButton.jsx';
 import * as sc from '../styles/AppStyle';
 
-class App extends React.Component {
+class PhotoGallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,8 +31,15 @@ class App extends React.Component {
     this.setState({ modal: status });
   }
 
+  // getData() {
+  //   axios('/api/photo/:id')
+  //     .then((res) => res.data)
+  //     .then((photos) => this.setState({ photos }))
+  //     .catch((err) => console.log('error'));
+  // }
+
   getData() {
-    axios('/api/photo/:id')
+    axios('http://localhost:3002/api/photo/:id')
       .then((res) => res.data)
       .then((photos) => this.setState({ photos }))
       .catch((err) => console.log('error'));
@@ -68,4 +75,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default PhotoGallery;
