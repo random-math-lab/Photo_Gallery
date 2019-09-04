@@ -45,6 +45,7 @@ class App extends React.Component {
   render() { 
         if (this.state.photos.length > 0) {
             return(
+              <sc.Main>
                 <sc.Gallery>
                     <sc.Searchbar></sc.Searchbar>
                     <Modal data={this.state.photos} hidden={this.state.modal} toggleModal={this.toggleModal}/>
@@ -58,6 +59,7 @@ class App extends React.Component {
                         <ViewPhotoButton toggleModal={this.toggleModal}/>
                     </sc.BtnContainer>
                 </sc.Gallery>
+                </sc.Main>
             )
         } else {
             return null;

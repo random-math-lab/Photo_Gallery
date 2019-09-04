@@ -60,7 +60,9 @@ class Modal extends React.Component {
                         <ModalEntryMain main={this.state.main} onClick={this.onClick} />
                         <ModalEntryCarousel main={this.state.main} carousel={this.state.carousel} count={this.state.count}/>
                         <sc.CloseBtnContainer>
-                            <span className="closeBtn" onClick={this.props.toggleModal} data-dismiss="modal">&times;</span>  
+                            <sc.CloseBtn>
+                                <span onClick={this.props.toggleModal} data-dismiss="modal">&times;</span>  
+                            </sc.CloseBtn>
                         </sc.CloseBtnContainer>
                     </sc.ModalContent>   
                 </sc.Modal>

@@ -32,4 +32,13 @@ display: inline-flex;
 margin: 0px;
 `;
 
-ShareSave.displayName = 'ShareSave';
+export const Main = styled.div`
+font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+font-size: 14px;
+color: #484848;
+background-color: #fff;
+margin: 0;
+-webkit-font-smoothing: antialiased;
+`;
+
+Main.displayName = 'Main';

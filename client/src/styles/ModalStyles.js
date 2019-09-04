@@ -31,3 +31,12 @@ width: 70px;
 align-content: center;
 `;
 CloseBtnContainer.displayName = 'CloseBtnContainer';
+
+export const CloseBtn = styled.div`
+height: 70px;
+width: 70px;
+font-size: 65px;
+font-weight: 100;
+cursor: pointer;
+`;
+CloseBtn.displayName = 'CloseBtn';

@@ -13,6 +13,7 @@ ModalMain.displayName = 'ModalMain';
 
 export const ModalMainPhoto = styled.div`
 background-image: url(${props => props.image});
+display: relative;
 background-size: cover;
 background-repeat:no-repeat;
 justify-self: center;
