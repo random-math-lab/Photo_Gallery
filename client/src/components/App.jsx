@@ -3,7 +3,6 @@ import axios from 'axios';
 import Photo from './Photo.jsx';
 import Modal from './Modal.jsx';
 import ShareButton from './ShareButton.jsx';
-import styled from 'styled-components';
 import SaveButton from './SaveButton.jsx';
 import ViewPhotoButton from './ViewPhotoButton.jsx';
 import * as sc from '../styles/AppStyle';

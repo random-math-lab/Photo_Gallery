@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+const styled = window.styled;
 
 export const ModalMain = styled.div`
 float: left;
