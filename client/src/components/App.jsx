@@ -21,21 +21,14 @@ class PhotoGallery extends React.Component {
   }
 
   toggleModal() {
-    let status = this.state.modal;
-    if (status === 'none') {
-      status = 'block';
-    } else if (status === 'block') {
-      status = 'none';
+    let modal = this.state.modal;
+    if (modal === 'none') {
+      modal = 'block';
+    } else if (modal === 'block') {
+      modal = 'none';
     }
-    this.setState({ modal: status });
+    this.setState({ modal });
   }
-
-  // getData() {
-  //   axios('/api/photo/:id')
-  //     .then((res) => res.data)
-  //     .then((photos) => this.setState({ photos }))
-  //     .catch((err) => console.log('error'));
-  // }
 
   getData() {
     axios('http://localhost:3002/api/photo/:id')
