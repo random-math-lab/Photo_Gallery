@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database');
 const app = express();
-const PORT = 3002;
+const PORT = 3306;
 
 // app.use(morgan('dev'))
 app.use((req, res, next) => {

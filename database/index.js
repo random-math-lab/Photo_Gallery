@@ -2,8 +2,9 @@ const mysql = require('mysql');
 const seeder = require('./seeder.js') 
 
 const db = mysql.createConnection({
+    host: '172.17.0.2',
     user: 'root',
-    password: '',
+    password: 'default',
     database: 'photos'
 })
 

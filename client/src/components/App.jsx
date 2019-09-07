@@ -31,7 +31,7 @@ class PhotoGallery extends React.Component {
   }
 
   getData() {
-    axios('http://localhost:3002/api/photo/:id')
+    axios('http://localhost:3306/api/photo/:id')
       .then((res) => res.data)
       .then((photos) => this.setState({ photos }))
       .catch((err) => console.log('error'));
