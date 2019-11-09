@@ -36,10 +36,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
-
-// npm generate seed
-// npm insert seed into db
-// upload as csv
-// write data as js and then upload data to db.
-// 
