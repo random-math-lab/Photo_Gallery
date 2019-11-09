@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+Trip Rental Application - Photo Gallery Micro-Service
 
 ## Related Projects
 
