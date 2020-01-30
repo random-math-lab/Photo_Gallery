@@ -14,14 +14,14 @@ class Modal extends React.Component {
             carousel: props.data,
             count: 1,
         }
-        this.onClick = this.onClick.bind(this)
+        this.handleCarouselToggle = this.handleCarouselToggle.bind(this)
     }
 
-    onClick (direction) {
-        var main = this.state.main;
-        var carousel = this.state.carousel;
-        var length = carousel.length;
-        var count = this.state.count;
+    handleCarouselToggle (direction) {
+        let main = main;
+        let carousel = carousel;
+        let length = carousel.length;
+        let count = count;
         if(direction === "left") {
             carousel.splice(0,1)
             carousel.push(main[0])
@@ -36,7 +36,7 @@ class Modal extends React.Component {
                 count: count
             })
         } else {
-            var photo = carousel[length-1]
+            let photo = carousel[length-1]
             carousel.splice(length-1 ,1)
             carousel.splice(0,0, photo)
             if(count === length) {
@@ -52,15 +52,18 @@ class Modal extends React.Component {
         }
     }
     render() {
+        let { main, carousel, count } = this.state;
+        let { handleCarouselToggle } = this;
+        let { hidden, toggleModal} = this.props;
         return (
             <div>
-                <sc.Modal hidden={this.props.hidden}>
+                <sc.Modal hidden={hidden}>
                     <sc.ModalContent>
-                        <ModalEntryMain main={this.state.main} onClick={this.onClick} />
-                        <ModalEntryCarousel main={this.state.main} carousel={this.state.carousel} count={this.state.count}/>
+                        <ModalEntryMain main={main} onClick={handleCarouselToggle} />
+                        <ModalEntryCarousel main={main} carousel={carousel} count={count}/>
                         <sc.CloseBtnContainer>
                             <sc.CloseBtn>
-                                <span onClick={this.props.toggleModal} data-dismiss="modal">&times;</span>  
+                                <span onClick={toggleModal} data-dismiss="modal">&times;</span>  
                             </sc.CloseBtn>
                         </sc.CloseBtnContainer>
                     </sc.ModalContent>   

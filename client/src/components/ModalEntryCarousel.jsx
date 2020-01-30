@@ -3,16 +3,17 @@ import ModalDescription from './ModalDescription.jsx';
 import * as sc from '../styles/ModalEntryCarouselStyles';
 
 var ModalEntryCarousel = (props) => {
+    let { carousel, count } = props;
     return (
         <sc.CarouselContainer>
             <sc.ModalCarousel>
-                <sc.ModalCarouselPhoto image={props.carousel[2].url}/>
-                <sc.ModalCarouselPhoto image={props.carousel[1].url}/>
-                <sc.ModalCarouselPhotoCenter image={props.carousel[0].url}/>
-                <sc.ModalCarouselPhoto image={props.carousel[props.carousel.length-1].url}/>
-                <sc.ModalCarouselPhoto image={props.carousel[props.carousel.length-2].url}/>
-            </sc.ModalCarousel>
-                <ModalDescription description={props.carousel[0].description} count={props.count} length={props.carousel.length}/>
+                <sc.ModalCarouselPhoto image={carousel[2].url}/>
+                <sc.ModalCarouselPhoto image={carousel[1].url}/>
+                <sc.ModalCarouselPhotoCenter image={carousel[0].url}/>
+                <sc.ModalCarouselPhoto image={carousel[carousel.length-1].url}/>
+                <sc.ModalCarouselPhoto image={carousel[carousel.length-2].url}/>
+                </sc.ModalCarousel>
+                <ModalDescription description={carousel[0].description} count={count} length={carousel.length}/>
         </sc.CarouselContainer>
     );
 };
