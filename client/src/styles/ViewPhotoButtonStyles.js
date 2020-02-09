@@ -1,4 +1,4 @@
-const styled = window.styled;
+import styled from 'styled-components';
 
 export const ViewBtn = styled.button`
 float: right;

@@ -1,6 +1,6 @@
 # Project Name
 
-Trip Rental Application - Photo Gallery Micro-Service
+> Project description
 
 ## Related Projects
 
@@ -36,3 +36,10 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
+
+// npm generate seed
+// npm insert seed into db
+// upload as csv
+// write data as js and then upload data to db.
+// 

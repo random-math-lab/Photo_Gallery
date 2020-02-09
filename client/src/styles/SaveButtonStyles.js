@@ -1,4 +1,4 @@
-const styled = window.styled;
+import styled from 'styled-components';
 
 export const Savebtn = styled.button`
 font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;

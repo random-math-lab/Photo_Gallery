@@ -4,7 +4,7 @@ import * as sc from '../styles/ViewPhotoButtonStyles';
 
 const ViewPhotoButton = (props) => {
     return (
-        <sc.ViewBtn onClick={props.toggleModal}>View Photo</sc.ViewBtn>
+            <sc.ViewBtn onClick={props.toggleModal}>View Photo</sc.ViewBtn>
     )
 }
 

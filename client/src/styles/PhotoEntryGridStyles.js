@@ -1,4 +1,4 @@
-const styled = window.styled;
+import styled from 'styled-components';
 
 export const Gridphotobox = styled.div`
 display: inline-flex;

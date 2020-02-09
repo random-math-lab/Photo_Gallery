@@ -3,9 +3,11 @@ import axios from 'axios';
 import Photo from './Photo.jsx';
 import Modal from './Modal.jsx';
 import ShareButton from './ShareButton.jsx';
+import styled from 'styled-components';
 import SaveButton from './SaveButton.jsx';
 import ViewPhotoButton from './ViewPhotoButton.jsx';
 import * as sc from '../styles/AppStyle';
+import { Suspense, lazy } from 'react';
 
 class PhotoGallery extends React.Component {
   constructor(props) {
@@ -16,56 +18,54 @@ class PhotoGallery extends React.Component {
       photos: [],
       modal: 'none',
     };
-    this.getPhotos = this.getPhotos.bind(this);
+    this.getData = this.getData.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
   }
 
   toggleModal() {
-    let modal = this.state.modal;
-    if (modal === 'none') {
-      modal = 'block';
-    } else if (modal === 'block') {
-      modal = 'none';
+    let status = this.state.modal;
+    if (status === 'none') {
+      status = 'block';
+    } else if (status === 'block') {
+      status = 'none';
     }
-    this.setState({ modal });
+    this.setState({ modal: status });
   }
 
-  getPhotos() {
-    axios('http://localhost:3306/api/photo/:id')
+  getData() {
+    axios('/api/photo/:id')
       .then((res) => res.data)
       .then((photos) => this.setState({ photos }))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log('error'));
   }
 
   componentDidMount() {
-    this.getPhotos();
+    this.getData();
   }
 
   render() { 
-    var { listingid, mainphoto, photos, modal } = this.state;
-    var { toggleModal } = this;
-    if (this.state.photos.length > 0) {
-      return(
-        <sc.Main>
-          <sc.Gallery>
-              <sc.Searchbar></sc.Searchbar>
-              <Modal data={photos} hidden={modal} toggleModal={toggleModal}/>
-              <div onClick={toggleModal} className="gallery"></div>
-              <Photo data={photos} toggleModal={toggleModal}/>
-              <sc.BtnContainer>
-                  <sc.ShareSave>
-                      <ShareButton/>
-                      <SaveButton/>
-                  </sc.ShareSave>
-                  <ViewPhotoButton toggleModal={toggleModal}/>
-              </sc.BtnContainer>
-          </sc.Gallery>
-          </sc.Main>
-      )
-    } else {
-      return null;
-    } 
-  }
+        if (this.state.photos.length > 0) {
+            return(
+              <sc.Main>
+                <sc.Gallery>
+                    <sc.Searchbar></sc.Searchbar>
+                    <Modal data={this.state.photos} hidden={this.state.modal} toggleModal={this.toggleModal}/>
+                    <div onClick={this.toggleModal} className="gallery"></div>
+                    <Photo data={this.state.photos} toggleModal={this.toggleModal}/>
+                    <sc.BtnContainer>
+                        <sc.ShareSave>
+                            <ShareButton/>
+                            <SaveButton/>
+                        </sc.ShareSave>
+                        <ViewPhotoButton toggleModal={this.toggleModal}/>
+                    </sc.BtnContainer>
+                </sc.Gallery>
+                </sc.Main>
+            )
+        } else {
+            return null;
+        } 
+    }
 }
 
 

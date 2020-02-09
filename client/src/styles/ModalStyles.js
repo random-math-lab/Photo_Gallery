@@ -1,4 +1,4 @@
-const styled = window.styled;
+import styled from 'styled-components';
 
 export const Modal = styled.div`
 display: ${props => props.hidden};

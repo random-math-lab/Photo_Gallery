@@ -1,12 +1,14 @@
 import React  from 'react';
 import styled from 'styled-components';
-import * as sc from '../styles/ModalPhotoEntryStyles';
+// import * as sc from '../styles/ModalPhotoEntryStyles';
+import * as sc from '../styles/ModalEntryCarouselStyles';
 
 var ModalPhotoEntry = (props) => {
+   
         return (
-            <sc.ModalPhotoContainer image={props.data.url}>
-                <h6>${props.data.description}</h6>
-            </sc.ModalPhotoContainer>
+        <div>
+           <sc.ModalCarouselPhoto image={props.carousel[props.index].url}/> 
+        </div>
         )
     
 }

@@ -1,4 +1,4 @@
-const styled = window.styled;
+import styled from 'styled-components';
 
 export const CarouselContainer = styled.div`
 float: right;

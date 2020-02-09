@@ -11,7 +11,7 @@
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/server.js",
     "db": "mysql -u root < schema.sql",
-    "seed": "node ./database/index.js",
+    "seed": "node ./database/seeder.js",
     "test": "npx jest --watchAll --coverage"
   },
   "proxy": "http://localhost:3002",

@@ -2,9 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database');
 const app = express();
-const PORT = 3306;
+const PORT = 3002;
 
-// app.use(morgan('dev'))
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header("Access-Control-Allows-Headers", "Origin, X-Request-With, Content-Type, Accept");
