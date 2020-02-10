@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import SaveButton from './SaveButton.jsx';
 import ViewPhotoButton from './ViewPhotoButton.jsx';
 import * as sc from '../styles/AppStyle';
-import { Suspense, lazy } from 'react';
 
 class PhotoGallery extends React.Component {
   constructor(props) {
@@ -29,6 +28,7 @@ class PhotoGallery extends React.Component {
     } else if (status === 'block') {
       status = 'none';
     }
+    console.log(status)
     this.setState({ modal: status });
   }
 
@@ -49,7 +49,11 @@ class PhotoGallery extends React.Component {
               <sc.Main>
                 <sc.Gallery>
                     <sc.Searchbar></sc.Searchbar>
-                    <Modal data={this.state.photos} hidden={this.state.modal} toggleModal={this.toggleModal}/>
+                    <Modal 
+                      data={this.state.photos} 
+                      hidden={this.state.modal} 
+                      toggleModal={this.toggleModal}
+                    />
                     <div onClick={this.toggleModal} className="gallery"></div>
                     <Photo data={this.state.photos} toggleModal={this.toggleModal}/>
                     <sc.BtnContainer>
