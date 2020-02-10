@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import * as sc from '../styles/ModalEntryCarouselStyles';
 
 import VizSensor from 'react-visibility-sensor';
@@ -22,14 +23,6 @@ class ModalPhotoEntry extends React.Component {
               return ""
         }
   }
-
-  componentDidMount() {
-      
-  }
-
-  componentDidUpdate() {
-  }
-
 
   render() {
         return(

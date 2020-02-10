@@ -28,7 +28,6 @@ class PhotoGallery extends React.Component {
     } else if (status === 'block') {
       status = 'none';
     }
-    console.log(status)
     this.setState({ modal: status });
   }
 
@@ -54,17 +53,23 @@ class PhotoGallery extends React.Component {
                       hidden={this.state.modal} 
                       toggleModal={this.toggleModal}
                     />
-                    <div onClick={this.toggleModal} className="gallery"></div>
-                    <Photo data={this.state.photos} toggleModal={this.toggleModal}/>
-                    <sc.BtnContainer>
+                    <div 
+                      onClick={this.toggleModal} className="gallery"></div>
+                      <Photo 
+                        data={this.state.photos} 
+                        toggleModal={this.toggleModal}
+                      />
+                      <sc.BtnContainer>
                         <sc.ShareSave>
                             <ShareButton/>
                             <SaveButton/>
                         </sc.ShareSave>
-                        <ViewPhotoButton toggleModal={this.toggleModal}/>
+                        <ViewPhotoButton 
+                          toggleModal={this.toggleModal}
+                        />
                     </sc.BtnContainer>
                 </sc.Gallery>
-                </sc.Main>
+              </sc.Main>
             )
         } else {
             return null;

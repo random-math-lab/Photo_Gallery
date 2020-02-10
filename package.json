@@ -21,8 +21,10 @@
     "babel-jest": "^24.9.0",
     "babel-preset-airbnb": "^4.0.1",
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
     "enzyme-to-json": "^3.4.0",
     "express": "^4.17.1",
+    "express-static-gzip": "^2.0.6",
     "faker": "^4.1.0",
     "jest-junit": "^8.0.0",
     "jquery": "^3.4.1",
@@ -38,13 +40,15 @@
     "sinon": "^7.4.1",
     "styled-components": "^4.3.2",
     "supertest": "^4.0.2",
-    "tls": "0.0.1"
+    "tls": "0.0.1",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "compression-webpack-plugin": "^3.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",

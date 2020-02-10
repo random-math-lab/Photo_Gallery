@@ -3,8 +3,6 @@ import ModalDescription from './ModalDescription.jsx';
 import ModalPhotoEntry from './ModalPhotoEntry.jsx';
 import * as sc from '../styles/ModalEntryCarouselStyles';
 
-const Entry = lazy(() => import('./ModalPhotoEntry.jsx'));
-
 class ModalEntryCarousel extends React.Component {
     constructor(props) {
         super(props);
@@ -12,20 +10,8 @@ class ModalEntryCarousel extends React.Component {
             main: props.main,
             carousel: props.carousel,
             count: props.count,
-            visible: [],
             images: {}
         }
-        this.isVisible = this.isVisible.bind(this);
-    }
-
-    isVisible(image, visible) {
-        var images = this.state.images;
-        if(visible) {
-            images[image] = true;
-        } else {
-            images[image] = false;
-        }
-        this.setState({images: images})
     }
 
     componentDidUpdate() {
@@ -36,7 +22,6 @@ class ModalEntryCarousel extends React.Component {
         return (
             <sc.CarouselContainer>
                 <sc.ModalCarousel>
-                        {/* <Suspense fallback={<p>Loading</p>}> */}
                             {carousel.map((entry, index) => (
                                 <ModalPhotoEntry 
                                     key={index} 
@@ -44,11 +29,9 @@ class ModalEntryCarousel extends React.Component {
                                     carousel={carousel} 
                                     count={count} 
                                     index={index}
-                                    isVisible={this.isVisible}
                                     hidden={this.props.hidden}
                                 />
                             ))}
-                        {/* </Suspense> */}
                 </sc.ModalCarousel>
                     <ModalDescription 
                         description={carousel[0].description} 
