@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Gallery = styled.div`
 width: 100%;
+padding: 0;
+margin: 0;
 height: 445.5px;
 `;
 Gallery.displayName = 'Gallery';
@@ -9,7 +11,7 @@ Gallery.displayName = 'Gallery';
 export const Searchbar = styled.div`
 width:100%;
 height:80px;
-background-image: url('https://fu11m3tal.s3-us-west-1.amazonaws.com/searchbar.png');
+background-color: orange;
 background-size: 100%;
 background-repeat: no-repeat;
 background-position: 50%;
@@ -33,6 +35,8 @@ margin: 0px;
 `;
 
 export const Main = styled.div`
+padding: 0;
+margin: 0;
 font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 font-size: 14px;
 color: #484848;

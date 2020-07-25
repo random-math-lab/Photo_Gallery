@@ -12,12 +12,42 @@ class PhotoGallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listingid: 3,
+      listingid: 1,
       mainphoto: '',
-      photos: [],
+      photos: [
+        {
+          id: 0, 
+          listingId: 1, 
+          url: "https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2020/5/10/zhongldfe9bfwrx7mun9/alex-albon-virtual-f1-spain", 
+          description: "Redbull driver Alex Albon on old Soft tires during the 2019 Spanish Grand Prix"
+        }, 
+        {
+          id: 0, 
+          listingId: 1, 
+          url: "https://cdn-1.motorsport.com/images/amp/68yXMQl0/s6/guanyu-zhou-uni-virtuosi-1.jpg", 
+          description: "Renault debut of 2020 F1 livery"
+        },
+        {
+          id: 0, 
+          listingId: 1, 
+          url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ferraris-german-driver-sebastian-vettel-steers-his-car-news-photo-1594318599.jpg?crop=1xw:0.84375xh;center,top&resize=480:*", 
+          description: "Sebastian Vettel in his last year with Scuderia Ferrari, buzz around the paddock is communcation with the Mercedes Silver Arrows is that a seat is open for the 3-time world champion."
+        }, 
+        {
+          id: 0, 
+          listingId: 1, 
+          url: "https://s.yimg.com/ny/api/res/1.2/1tZObV76_rKjlV9muN3C6A--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media.zenfs.com/en-US/reuters.com/50ddbd3021f3b9be2b080c82a85372cd", 
+          description: "Mclaren on their way to their first P1 in over 10 years"
+        }, 
+        {
+          id: 0, 
+          listingId: 1, 
+          url: "https://i2-prod.mirror.co.uk/incoming/article22305210.ece/ALTERNATES/s615/0_AUTO-PRIX-F1-AUT.jpg", 
+          description: "Mercedes honors the Black Lives Matter movement with a new all black livery"
+        }
+      ],
       modal: 'none',
     };
-    this.getData = this.getData.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
   }
 
@@ -31,16 +61,6 @@ class PhotoGallery extends React.Component {
     this.setState({ modal: status });
   }
 
-  getData() {
-    axios('/api/photo/:id')
-      .then((res) => res.data)
-      .then((photos) => this.setState({ photos }))
-      .catch((err) => console.log('error'));
-  }
-
-  componentDidMount() {
-    this.getData();
-  }
 
   render() { 
         if (this.state.photos.length > 0) {
